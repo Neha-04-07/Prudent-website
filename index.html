@@ -1181,8 +1181,7 @@
                         <div class="careers-actions">
                             <a class="btn btn-white" href="https://www.linkedin.com/company/prudent-technologies-and-consulting-inc/jobs/" target="_blank"
                         rel="noopener">Openings in USA <span>&rarr;</span></a>
-                            <a class="btn btn-ghost-light" href="https://www.linkedin.com/company/prudent-technologies-and-consulting-inc/jobs/" target="_blank"
-                        rel="noopener">Openings in India <span>&rarr;</span></a>
+                            <a class="btn btn-ghost-light" href="https://www.linkedin.com/company/prudent-technologies-and-consulting-inc/jobs/" >Openings in India <span>&rarr;</span></a>
                         </div>
                     </div>
                     <figure class="careers-img">
@@ -1253,7 +1252,7 @@
                     </ul>
                 </div>
 
-                <form class="contact-form reveal" action="#thankyou-popup" method="post" target="form-submit-target">
+                <form id="consultation-form" class="contact-form reveal" action="#thankyou-popup" method="post" target="form-submit-target">
                     <h3>Schedule a consultation</h3>
                     <p class="form-note">Fields marked * are required.</p>
 
@@ -1393,10 +1392,9 @@
             </p>
 
             <div class="thankyou-modal-footer">
-                <a href="#contact" class="btn btn-grad thankyou-done-btn">
-                    <label for="thankyou-modal-toggle" class="thankyou-done-label">Back to website
-                        <span>&rarr;</span></label>
-                </a>
+                 <button type="reset" form="consultation-form" class="btn btn-grad thankyou-done-btn"> 
+    <label for="thankyou-modal-toggle" class="thankyou-done-label">Back to website <span>&rarr;</span></label> 
+  </button> 
             </div>
         </div>
     </div>
