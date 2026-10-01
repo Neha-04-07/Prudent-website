@@ -1264,7 +1264,7 @@
                         </div>
                         <div class="field">
                             <label for="company">Company name *</label>
-                            <input id="company" name="company" pattern="^[a-zA-Z'-]+(?:\s[a-zA-Z'-]+){0,2}$" title="Company name should contain only letters" type="text" autocomplete="organization"
+                            <input id="company" name="company" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$" title="Company name should contain only letters" type="text" autocomplete="organization"
                                 placeholder="Where you work" required>
                         </div>
                     </div>
@@ -1277,7 +1277,7 @@
                         </div>
                         <div class="field">
                             <label for="role">Role / title</label>
-                            <input id="role" name="role" type="text" pattern="^[a-zA-Z'-]+(?:\s[a-zA-Z'-]+){0,2}$" title="Role should contain only letters" autocomplete="organization-title"
+                            <input id="role" name="role" type="text" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$" title="Role should contain only letters" autocomplete="organization-title"
                                 placeholder="Your role">
                         </div>
                     </div>
