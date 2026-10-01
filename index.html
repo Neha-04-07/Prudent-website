@@ -1259,12 +1259,12 @@
                     <div class="field-row">
                         <div class="field">
                             <label for="name">Full name *</label>
-                            <input id="name" name="name" type="text" pattern="^[A-Za-z]+ [A-Za-z]+$" title="Name should contain only letters" autocomplete="name" placeholder="Your name"
+                            <input id="name" name="name" type="text" pattern="^[A-Za-z]+ [A-Za-z]+$" title="Name should contain First and Last name" autocomplete="name" placeholder="Your name"
                                 required>
                         </div>
                         <div class="field">
                             <label for="company">Company name *</label>
-                            <input id="company" name="company" pattern="^[A-Za-z]+ [A-Za-z]+$" title="Company name should contain only letters" type="text" autocomplete="organization"
+                            <input id="company" name="company" pattern="^[a-zA-Z'-]+(?:\s[a-zA-Z'-]+){0,2}$" title="Company name should contain only letters" type="text" autocomplete="organization"
                                 placeholder="Where you work" required>
                         </div>
                     </div>
@@ -1277,7 +1277,7 @@
                         </div>
                         <div class="field">
                             <label for="role">Role / title</label>
-                            <input id="role" name="role" type="text" pattern="^[A-Za-z]+ [A-Za-z]+$" title="Role should contain only letters" autocomplete="organization-title"
+                            <input id="role" name="role" type="text" pattern="^[a-zA-Z'-]+(?:\s[a-zA-Z'-]+){0,2}$" title="Role should contain only letters" autocomplete="organization-title"
                                 placeholder="Your role">
                         </div>
                     </div>
@@ -1303,7 +1303,7 @@
 
                     <button class="btn btn-grad submit-consult-btn" type="submit">
                         <label for="thankyou-modal-toggle" class="submit-btn-click-target">
-                            Schedule a consultation <span>&rarr;</span>
+                            Schedule a Consultation
                         </label>
                     </button>
                 </form>
@@ -1393,7 +1393,7 @@
 
             <div class="thankyou-modal-footer">
                  <button type="reset" form="consultation-form" class="btn btn-grad thankyou-done-btn"> 
-    <label for="thankyou-modal-toggle" class="thankyou-done-label">Back to website <span>&rarr;</span></label> 
+    <label for="thankyou-modal-toggle" class="thankyou-done-label">Close</label> 
   </button> 
             </div>
         </div>
