@@ -1259,12 +1259,12 @@
                     <div class="field-row">
                         <div class="field">
                             <label for="name">Full name *</label>
-                            <input id="name" name="name" type="text" autocomplete="name" pattern="^[A-Za-z]+ [A-Za-z]+$" placeholder="Your name"
+                            <input id="name" name="name" type="text" pattern="^[A-Za-z]+ [A-Za-z]+$" title="Name should contain only letters" autocomplete="name" placeholder="Your name"
                                 required>
                         </div>
                         <div class="field">
                             <label for="company">Company name *</label>
-                            <input id="company" name="company" type="text" autocomplete="organization"
+                            <input id="company" name="company" pattern="^[A-Za-z]+ [A-Za-z]+$" title="Company name should contain only letters" type="text" autocomplete="organization"
                                 placeholder="Where you work" required>
                         </div>
                     </div>
@@ -1277,7 +1277,7 @@
                         </div>
                         <div class="field">
                             <label for="role">Role / title</label>
-                            <input id="role" name="role" type="text" autocomplete="organization-title"
+                            <input id="role" name="role" type="text" pattern="^[A-Za-z]+ [A-Za-z]+$" title="Role should contain only letters" autocomplete="organization-title"
                                 placeholder="Your role">
                         </div>
                     </div>
