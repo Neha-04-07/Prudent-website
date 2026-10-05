@@ -486,6 +486,20 @@ section {
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, .15);
 }
+.hero-stats li::before {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 4px;
+    margin-bottom: 22px;
+    border-radius: 4px;
+    background: var(--grad);
+    transition: width .3s;
+}
+
+.hero-stats li:hover::before {
+    width: 280px;
+}
 
 .hero-stats strong {
     display: block;
@@ -658,7 +672,8 @@ section {
 }
 
 .svc details[open] summary::after {
-    transform: rotate(45deg);
+    /* transform: rotate(45deg); */
+    content: "-";
 }
 
 .svc-list {
