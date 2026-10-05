@@ -476,46 +476,96 @@ section {
 
 .hero-stats {
     position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 80px;
+    gap: 22px;
+    margin-top: 64px;
+    margin-bottom: 8px;
 }
 
 .hero-stats li {
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, .15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 24px;
+    border-radius: var(--radius);
+    background: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 16px 36px rgba(7, 8, 12, 0.22), 0 2px 8px rgba(7, 8, 12, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    overflow: hidden;
 }
+
 .hero-stats li::before {
     content: "";
-    display: block;
-    width: 44px;
-    height: 4px;
-    margin-bottom: 22px;
-    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
     background: var(--grad);
-    transition: width .3s;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-stats li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(7, 8, 12, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.25);
 }
 
 .hero-stats li:hover::before {
-    width: 280px;
+    opacity: 1;
+}
+
+.stat-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background: var(--blue-subtle);
+    color: var(--blue-dark);
+    transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.stat-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hero-stats li:hover .stat-icon {
+    background: #dbeafe;
+    transform: scale(1.06);
 }
 
 .hero-stats strong {
     display: block;
     font-family: var(--serif);
-    font-size: clamp(2.4rem, 4vw, 3.4rem);
-    font-weight: 500;
-    line-height: 1;
-    background: var(--grad-light);
+    font-size: clamp(2.2rem, 3.2vw, 2.9rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 55%, #3b82f6 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    margin-bottom: 8px;
 }
 
 .hero-stats span {
-    color: var(--muted-light);
-    font-size: 0.9rem;
+    display: block;
+    color: #475569;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.45;
 }
 
 /* panels */
@@ -672,8 +722,7 @@ section {
 }
 
 .svc details[open] summary::after {
-    /* transform: rotate(45deg); */
-    content: "-";
+    transform: rotate(45deg);
 }
 
 .svc-list {
