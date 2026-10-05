@@ -1136,12 +1136,10 @@ section {
     font-size: 1.1rem;
     transition: background .3s, color .3s;
 }
-
 .process-steps li:hover .step-no {
     background: var(--grad);
     color: var(--black);
 }
-
 .process-steps h3 {
     margin-bottom: 8px;
     font-size: 1.35rem;
@@ -1284,9 +1282,7 @@ section {
     color: var(--muted);
 }
 
-/* ==========================================================================
-   Leadership Team
-   ========================================================================== */
+
 .leadership-section {
     margin-top: 130px;
     position: relative;
@@ -1303,6 +1299,11 @@ section {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
     margin-bottom: 90px;
+}
+
+.leadership-section .leader-grid-exec:last-child,
+.leadership-section .leader-grid-exec:last-of-type {
+    margin-bottom: 0;
 }
 
 .leader-card {
@@ -1323,12 +1324,12 @@ section {
     border-color: rgba(59, 130, 246, 0.4);
 }
 
-/* Executive Card Layout */
+/* Executive & Featured Card Layout */
 .leader-card-featured {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 220px 1fr;
     padding: 28px;
-    gap: 28px;
+    gap: 26px;
     align-items: center;
     border-radius: 28px;
 }
@@ -1369,6 +1370,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 0;
 }
 
 .leader-role-badge {
@@ -1402,6 +1404,7 @@ section {
     color: var(--text);
     margin-bottom: 4px;
     line-height: 1.2;
+    overflow-wrap: break-word;
 }
 
 .leader-title {
@@ -1410,6 +1413,7 @@ section {
     font-weight: 600;
     margin-bottom: 14px;
     line-height: 1.4;
+    overflow-wrap: break-word;
 }
 
 .leader-desc {
@@ -1417,6 +1421,7 @@ section {
     font-size: 0.92rem;
     line-height: 1.6;
     margin-bottom: 20px;
+    overflow-wrap: break-word;
 }
 
 /* LinkedIn Connection Button */
@@ -1434,6 +1439,7 @@ section {
     transition: all 0.3s ease;
     width: fit-content;
     box-shadow: 0 4px 12px rgba(10, 102, 194, 0.2);
+    white-space: nowrap;
 }
 
 .leader-linkedin svg {
@@ -1503,16 +1509,11 @@ section {
     margin-inline: auto;
 }
 
-/* 8 Practice Leaders (4 columns) */
+/* Practice & Delivery Leaders Grid (Unified 2 Columns) */
 .leader-grid-team {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.leader-grid-team .leader-card {
-    padding: 22px;
-    border-radius: 22px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
 }
 
 .leader-avatar-wrap {
@@ -1994,12 +1995,6 @@ section {
         visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.thankyou-backdrop-close {
-    position: absolute;
-    inset: 0;
-    display: block;
-    cursor: default;
-}
 
 .thankyou-backdrop-label {
     display: block;
@@ -2299,6 +2294,12 @@ section {
     .contact-grid {
         gap: 40px;
     }
+
+    .leader-card-featured {
+        grid-template-columns: 190px 1fr;
+        gap: 20px;
+        padding: 22px;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -2321,12 +2322,10 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .leader-grid-exec {
-        grid-template-columns: 1fr;
-    }
-
+    .leader-grid-exec,
     .leader-grid-team {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .process-steps {
@@ -2585,16 +2584,22 @@ section {
     .leader-card-featured {
         grid-template-columns: 1fr;
         text-align: left;
+        padding: 24px 20px;
+        gap: 20px;
     }
 
     .leader-avatar-frame {
-        max-width: 240px;
-        margin: 0 auto 16px;
+        max-width: 220px;
+        margin: 0 auto 12px;
     }
 
     .leader-avatar-wrap {
         max-width: 220px;
-        margin: 0 auto 16px;
+        margin: 0 auto 12px;
+    }
+
+    .leader-info h3 {
+        font-size: 1.35rem;
     }
 
     .svc {
@@ -2699,6 +2704,41 @@ section {
     }
 }
 
+@media (max-width: 480px) {
+    .leader-card-featured {
+        padding: 18px 16px;
+        border-radius: 20px;
+        gap: 16px;
+    }
+
+    .leader-avatar-frame {
+        max-width: 190px;
+        border-radius: 16px;
+        margin: 0 auto 10px;
+    }
+
+    .leader-info h3 {
+        font-size: 1.25rem;
+    }
+
+    .leader-title {
+        font-size: 0.88rem;
+        margin-bottom: 10px;
+    }
+
+    .leader-desc {
+        font-size: 0.86rem;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+
+    .leader-linkedin {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+    }
+}
+
 @media (max-width: 320px) {
     :root {
         --gutter: 16px;
@@ -2762,16 +2802,21 @@ section {
     .leader-card-featured {
         grid-template-columns: 1fr;
         text-align: left;
+        padding: 14px 12px;
     }
 
     .leader-avatar-frame {
-        max-width: 240px;
-        margin: 0 auto 16px;
+        max-width: 150px;
+        margin: 0 auto 10px;
     }
 
     .leader-avatar-wrap {
-        max-width: 220px;
-        margin: 0 auto 16px;
+        max-width: 150px;
+        margin: 0 auto 10px;
+    }
+
+    .leader-info h3 {
+        font-size: 1.12rem;
     }
 
     .svc {
